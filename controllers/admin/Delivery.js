@@ -2,7 +2,6 @@ import { Delivery } from "../../models/index.js";
 
 export const DeliveryAdd = async (req, res) => {
   const { sel, selProduct } = req.body.deliveryInfo;
-  const { lat, lng } = req.body.pos[0];
 
   const temp = [];
   selProduct.forEach((element) => {
@@ -12,8 +11,10 @@ export const DeliveryAdd = async (req, res) => {
     await Delivery.create({
       name: sel,
       products: temp.toString(),
-      position_lat: lat,
-      position_lng: lng,
+      from_lat: req.body.pos[0].lat,
+      from_lng: req.body.pos[0].lng,
+      to_lat: req.body.pos[1].lat,
+      to_lng: req.body.pos[1].lng,
     });
     res.json({ msg: "Add successful" });
   } catch (error) {}

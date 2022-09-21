@@ -17,10 +17,16 @@ export const Delivery = db.define(
     products: {
       type: DataTypes.STRING,
     },
-    position_lat: {
+    from_lat: {
       type: DataTypes.STRING,
     },
-    position_lng: {
+    from_lng: {
+      type: DataTypes.STRING,
+    },
+    to_lat: {
+      type: DataTypes.STRING,
+    },
+    to_lng: {
       type: DataTypes.STRING,
     },
     status: {
