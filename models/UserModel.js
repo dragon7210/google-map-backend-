@@ -18,6 +18,9 @@ export const Users = db.define(
     refresh_token: {
       type: DataTypes.TEXT,
     },
+    role: {
+      type: DataTypes.INTEGER,
+    },
   },
   {
     freezeTableName: true,

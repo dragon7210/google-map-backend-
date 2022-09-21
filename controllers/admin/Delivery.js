@@ -1,4 +1,4 @@
-import { Delivery } from "../models/index.js";
+import { Delivery } from "../../models/index.js";
 
 export const DeliveryAdd = async (req, res) => {
   const { sel, selProduct } = req.body.deliveryInfo;
@@ -21,8 +21,8 @@ export const DeliveryAdd = async (req, res) => {
 
 export const getDeliverys = async (req, res) => {
   try {
-    const allDilvery = await Delivery.findAll();
-    res.json(allDilvery);
+    const allDelivery = await Delivery.findAll();
+    res.json(allDelivery);
   } catch (error) {
     console.log(error);
   }

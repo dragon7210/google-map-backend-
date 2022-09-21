@@ -4,7 +4,7 @@ import db from "../config/Database.js";
 const { DataTypes } = Sequelize;
 
 export const Delivery = db.define(
-  "dilvery",
+  "delivery",
   {
     name: {
       type: DataTypes.STRING,
