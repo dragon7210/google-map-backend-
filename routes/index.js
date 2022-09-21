@@ -18,7 +18,7 @@ import {
   customLogout,
   customRegister,
 } from "../controllers/customer/Users.js";
-import { allDelivery } from "../controllers/customer/Delivery.js";
+import { allDelivery, update } from "../controllers/customer/Delivery.js";
 
 import { verifyToken } from "../middleware/VerifyToken.js";
 import { refreshToken } from "../controllers/RefreshToken.js";
@@ -41,5 +41,6 @@ router.post("/login", customLogin);
 router.delete("/logout", customLogout);
 router.post("/signup", customRegister);
 router.post("/all", allDelivery);
+router.post("/update/:id", update);
 
 export default router;

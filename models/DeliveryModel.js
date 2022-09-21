@@ -6,6 +6,11 @@ const { DataTypes } = Sequelize;
 export const Delivery = db.define(
   "delivery",
   {
+    id: {
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
+    },
     name: {
       type: DataTypes.STRING,
     },
@@ -17,6 +22,9 @@ export const Delivery = db.define(
     },
     position_lng: {
       type: DataTypes.STRING,
+    },
+    status: {
+      type: DataTypes.INTEGER,
     },
   },
   {

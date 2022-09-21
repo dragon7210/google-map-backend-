@@ -1,8 +1,8 @@
 import { Delivery } from "../../models/index.js";
 import { Users } from "../../models/index.js";
+import { all } from "../admin/Users.js";
 
 export const allDelivery = async (req, res) => {
-  console.log(req.body.userInfo);
   const sel = await Users.findAll({
     where: {
       email: req.body.userInfo,
@@ -18,4 +18,18 @@ export const allDelivery = async (req, res) => {
   } catch (error) {
     console.log(error);
   }
+};
+
+export const update = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const delivery = await Delivery.findOne({
+      where: {
+        id: id,
+      },
+    });
+    delivery.status = req.body.status;
+    await delivery.save();
+    res.json({ msg: "Update Successful" });
+  } catch (error) {}
 };
